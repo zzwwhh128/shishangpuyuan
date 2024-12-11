@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>濮院封面</title>
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+		<style>
+			body,html{
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				overflow: hidden;
+			}
+			.full-screen{
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+			.full-screen img{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: auto;
+				height: 100%;
+				min-height: 100%;
+				transform: translate(-50%, -50%);
+				object-fit: cover;
+			}
+			@keyframes fadeIn {
+			      0% {
+			        opacity: 0;
+			      }
+			
+			      100% {
+			        opacity: 1;
+			      }
+			    }
+			   .new-img {
+			      animation: fadeIn 5s ease forwards;
+			    }
+				@keyframes slideInFromLeft {
+				      0% {
+				        left: -100%;
+				        opacity: 0;
+				      }
+				
+				      100% {
+				        left: 50%;
+				        opacity: 1;
+				        transform: translate(-50%, -50%);
+				      }
+				    }
+				.slide-img {
+				      animation: slideInFromLeft 3s ease forwards;
+				    }
+		</style>
+	</head>
+	<body>
+		<div class="full-screen">
+			<img src="img/封面1.png">
+			<img src="img/封面3.png">
+			<img id="newLayerImg" src="img/封面2.png" class="new-img">
+			<img id="slideImg" src="img/封面4.png" class="slide-img">
+			<img id="buttonImg" src="img/封面5.png" onclick="handleClick()" />
+			
+		</div>
+		<script type="text/javascript">
+			function handleClick() {
+			      var buttonImg = document.getElementById('buttonImg');
+			      buttonImg.style.opacity = 0.5;
+			      setTimeout(() => {
+			        buttonImg.style.opacity = 1;
+			      }, 1000);
+			      window.location.href = 'https://meaning-l.github.io/Beijinglou/';
+			    }
+		</script>
+		
+	</body>
+</html>
